@@ -1,0 +1,4 @@
+<div className="hero2">
+            <img src={heroImage2} alt="Hero Image2" className="hero-image-2" />
+          </div>
+          
