@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link component
 import './HeroSection.css';
 import heroImage1 from '../images/hero-banner-1.jpg';
 import heroImage2 from '../images/hero-banner-2.jpg';
  import heroShape from '../images/blog-shape.png';
 // import heroShape2 from '../images/hero-shape-2.png';
-
 const HeroSection = () => {
   return (
     <div className="hero-section">
@@ -28,6 +28,8 @@ const HeroSection = () => {
           </div>
   </div>
       </div>
+      <p>Click the Log In button</p>
+            <Link class='btn btn-primary btn-lg' to='/Login' role='button'>Login</Link>
     </div>
   );
 };
