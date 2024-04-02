@@ -1,4 +1,15 @@
 /* HeroSection.css */
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from its parent */
+}
+
+a:visited {
+  color: inherit; /* Maintain the same color for visited links */
+  text-decoration: none; /* Remove underline for visited state */
+}
+
 .hero-section {
   margin-top: 150px;
   display: grid;
@@ -77,6 +88,7 @@
 /* Button Style */
 .button {
   margin-top: 15px;
+  margin-right: 10px;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -101,4 +113,29 @@
 .button-link{
   text-decoration: none;
   color: #ffffff;
+  
+}
+
+.button_login {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid black;
+  background-color: black;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button_login:hover {
+  background-color:#e7512b ;
+  border-color: #e7512b;
+}
+
+.button_login:active {
+  transform: translateY(1px);
 }
