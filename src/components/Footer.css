@@ -1,0 +1,74 @@
+.footer {
+    background-color: #b5f8f8;
+    color: black;
+}
+div, p, h6, a, li, ul  {
+    color:black;
+ }
+
+#facts .facts-container {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  #facts .facts-container:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #003267;
+    opacity: 0.8;
+  }
+  #facts .facts-container .facts-icon {
+    font-size: 2.5rem;
+    color: #0000ff;
+  }
+  #facts .facts-container .facts-counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  ul {
+    list-style: none; /* Remove list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  ul li {
+    text-decoration: none; /* Remove text decoration */
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center; /* Remove underline */
+  }
+  
+  a:visited {
+    color: inherit; /* Maintain the same color for visited links */
+  }
+    
+  .button1 {
+    margin-top: 1px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid black;
+    background-color: black;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .button1:hover {
+    background-color: #0000ff;
+    border-color:  #0000ff;
+  }
+  
