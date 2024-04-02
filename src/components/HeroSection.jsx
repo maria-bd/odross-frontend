@@ -12,7 +12,10 @@ const HeroSection = () => {
           <h1>Ready to boost your coding skills ?</h1>
           <p>This platform is your best choice, join our learning courses and be ready to start a career in Computer Science ! </p>
         <div className='button'>
-        <a href="#" className="button-link">ENROLL THE COURSES</a>
+        <Link to='/Authentication' role='button'><a className="button-link">ENROLL THE COURSES</a></Link>
+        </div> 
+        <div className='button_login'>
+        <Link to='/Authentication' role='button'><a className="button-link">Log IN or Sign Up</a></Link>
         </div> 
       </div>
       <div className="hero-container">
@@ -28,8 +31,6 @@ const HeroSection = () => {
           </div>
   </div>
       </div>
-      <p>Click the Log In button</p>
-            <Link class='btn btn-primary btn-lg' to='/Login' role='button'>Login</Link>
     </div>
   );
 };
