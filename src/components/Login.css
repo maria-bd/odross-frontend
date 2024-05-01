@@ -1,0 +1,82 @@
+.login-container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container form div {
+    margin-bottom: 15px;
+}
+
+.login-container form label {
+    font-weight: bold;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="email"],
+.login-container form input[type="password"] {
+    width: calc(100% - 30px); /* Adjusted for the eye icon */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.login-container form .password-input {
+    position: relative;
+}
+
+.login-container form .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.login-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
+}
+
+.login-container .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.login-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
