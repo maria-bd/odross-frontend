@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import API_URLS from './variables';
 import './Login.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
+import Profile from './Profile'; // Assuming Profile component is defined
 
 const Login1 = () => {
     const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Login1 = () => {
                 const data = await response.json();
                 if (response.ok) {
                     console.log('Login successful');
-                    navigate('/Courses'); // Redirect to Dashboard upon successful login
+                    navigate('/Profile'); // Redirect to Profile upon successful login
                 } else {
                     // Handle server-side errors
                     console.error('Login failed:', data.detail);
@@ -48,6 +49,7 @@ const Login1 = () => {
             }
         }
     };
+    
 
     const validateForm = () => {
         const newErrors = {};
