@@ -1,9 +1,12 @@
-// variables.js
-
-const API_BASE_URL = 'http://localhost:8000/api/';
+const API_BASE_URL = 'http://127.0.0.1:8000/api/';
 
 const API_URLS = {
-  appUsers: `${API_BASE_URL}appUsers/`,
+  register: `${API_BASE_URL}register/`, 
+  login: `${API_BASE_URL}login/`, 
+  login2: `${API_BASE_URL}login2/`, 
+  login3: `${API_BASE_URL}login3/`, 
+  profile: `${API_BASE_URL}profile/`, 
+  profileUpdate: `${API_BASE_URL}profileUpdate/`, 
   domains: `${API_BASE_URL}domains/`,
   users: `${API_BASE_URL}users/`,
   instructors: `${API_BASE_URL}instructors/`,
