@@ -1,48 +1,72 @@
+// Profile.jsx
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import API_URLS from './variables';
+import './Profile.css';
 
-const Profile = ({ userEmail }) => {
-    const [user, setUser] = useState(null);
+const Profile = () => {
+    const location = useLocation();
+    const [userProfile, setUserProfile] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
     useEffect(() => {
-        const fetchUsers = async () => {
+        const fetchUserProfile = async () => {
             try {
-                const response = await fetch(API_URLS.profile); // Assuming this endpoint returns all users
-                const userData = await response.json();
-                if (response.ok) {
-                    // Filter out the user with the matching email
-                    const matchingUser = userData.find(u => u.email === userEmail);
-                    if (matchingUser) {
-                        setUser(matchingUser);
-                    } else {
-                        console.error('User not found');
-                    }
-                } else {
-                    console.error('Failed to fetch users');
+                const userEmail = location.state?.userEmail;
+                if (!userEmail) {
+                    console.error('User email not provided');
+                    return;
                 }
+
+                const response = await fetch(`${API_URLS.profile}?email=${userEmail}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user profile');
+                }
+
+                const data = await response.json();
+                setUserProfile(data);
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error fetching user profile:', error);
+                setError('Error fetching user profile');
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchUsers();
-    }, [userEmail]);
+        fetchUserProfile();
+    }, [location.state?.userEmail]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!userProfile) {
+        return <div>No profile data available</div>;
+    }
 
     return (
-        <div>
-            {loading ? (
-                <p>Loading...</p>
-            ) : user ? (
-                <div>
-                    <h2>Welcome, {user.name}</h2>
-                    {/* Display other user profile information */}
-                </div>
-            ) : (
-                <p>User not found</p>
-            )}
+        <div className="profile-card">
+            <div className="profile-photo">
+                <img src={userProfile.photo} alt="User" />
+            </div>
+            <div className="profile-info">
+                <h3>Name: {userProfile.name}</h3>
+                <h3>Family Name: {userProfile.fam_name}</h3>
+                <p>Bio: {userProfile.bio}</p>
+                <p>Total XP: {userProfile.total_XP}</p>
+                <Link to="/EditProfile" className="edit-profile-button">Edit Profile</Link>
+            </div>
         </div>
     );
 };

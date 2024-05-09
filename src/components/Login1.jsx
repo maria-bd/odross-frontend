@@ -1,9 +1,9 @@
+// Login1.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import API_URLS from './variables';
 import './Login.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
-import Profile from './Profile'; // Assuming Profile component is defined
 
 const Login1 = () => {
     const navigate = useNavigate();
@@ -34,7 +34,7 @@ const Login1 = () => {
                 const data = await response.json();
                 if (response.ok) {
                     console.log('Login successful');
-                    navigate('/Profile'); // Redirect to Profile upon successful login
+                    navigate('/Profile', { state: { userEmail: formData.email } }); // Pass user email as state
                 } else {
                     // Handle server-side errors
                     console.error('Login failed:', data.detail);
@@ -49,7 +49,6 @@ const Login1 = () => {
             }
         }
     };
-    
 
     const validateForm = () => {
         const newErrors = {};
