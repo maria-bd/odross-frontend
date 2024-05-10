@@ -1,0 +1,50 @@
+.card-list-container {
+  display: flex;
+  align-items: center;
+}
+
+.card-list {
+  display: flex;
+}
+
+.card {
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  border: 2px solid transparent; /* Initial border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Increase padding */
+  margin: 0 5px;
+  width: 120px; /* Slightly bigger width */
+  height: 120px; /* Slightly bigger height */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 14px; /* Adjust text size */
+  margin: 0;
+}
+
+.card p {
+  font-size: 12px; /* Adjust text size */
+  margin: 0;
+}
+
+.card.visible {
+  display: block;
+}
+
+.card:hover {
+  border-color: #007bff; /* Strong blue stroke on hover */
+}
+
+.nav-btn {
+  background: #ccc;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
