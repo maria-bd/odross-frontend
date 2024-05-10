@@ -1,0 +1,41 @@
+/* styles.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .container {
+    background-image: url('../assets/Images/1846936@2x.png'); 
+    padding: 100 px;
+    border-radius:20px;
+  }
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .row{
+    padding: 50px;
+  }
+  
+  .btn-training {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-course {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-training,
+  .btn-course {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .btn-training:hover,
+  .btn-course:hover {
+    opacity: 0.8;
+  }
