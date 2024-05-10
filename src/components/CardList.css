@@ -1,6 +1,30 @@
 .card-list-container {
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin-top: 50px; /* Adjust margin as needed */
+}
+
+.card-list {
+  display: flex;
+}
+
+.nav-btn {
+  background: #ccc;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-list-container {
+  display: flex;
+  align-items: center;
+   background-image: url('../assets/Images/1846936@2x.png'); /* Add your background image path here */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  padding: 60px; /* Add some padding for spacing */
 }
 
 .card-list {

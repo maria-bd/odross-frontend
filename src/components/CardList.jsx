@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './CardList.css'; // Import CSS for styling
+import { Link } from 'react-router-dom'; // Import Link component from React Router
 import Card from './Card'; // Import Card component
 import API_URLS from './variables';
+import './CardList.css'; // Import custom CSS for styling
 
 const CardList = () => {
   const [domains, setDomains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,14 +36,6 @@ const CardList = () => {
     fetchData();
   }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex(prevIndex => (prevIndex === 0 ? domains.length - 1 : prevIndex - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex === domains.length - 1 ? 0 : prevIndex + 1));
-  };
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -58,13 +50,14 @@ const CardList = () => {
 
   return (
     <div className="card-list-container">
-      <button className="nav-btn" onClick={handlePrev}>{'<'}</button>
       <div className="card-list">
-        {domains.map((domain, index) => (
-          <Card key={domain.id} domain={domain} isVisible={index === currentIndex} />
+        {/* Render cards */}
+        {domains.map((domain) => (
+          <Link key={domain.id} to={`/domain/${domain.domain_name}`}>
+            <Card domain={domain} />
+          </Link>
         ))}
       </div>
-      <button className="nav-btn" onClick={handleNext}>{'>'}</button>
     </div>
   );
 };
