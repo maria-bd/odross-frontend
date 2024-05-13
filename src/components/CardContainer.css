@@ -1,4 +1,8 @@
 /* styles.css */
+.btn-blue {
+  background-color: #007bff;
+  color: white;
+}
 body {
     font-family: 'Montserrat', sans-serif;
   }
