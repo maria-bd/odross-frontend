@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import API_URLS from './variables';
+import './LessonPage.css';
+import Chatbot from '../components/ChatBot/ChatComponent';
 
 const LessonPage = () => {
   const { lessonId } = useParams();
@@ -15,7 +17,6 @@ const LessonPage = () => {
     try {
       const response = await fetch(`${API_URLS.lessons}${lessonId}`);
       const lessonData = await response.json();
-      // Prepend the base URL to the video links
       lessonData.videos = lessonData.videos.map(video => ({
         ...video,
         link_vid: `http://127.0.0.1:8000${video.link_vid}`
@@ -45,31 +46,34 @@ const LessonPage = () => {
     <div className="lesson-page">
       <div className="main-content">
         <h2>{lesson_description}</h2>
-        <div>
+        <div className="button-group">
           <button
             disabled={currentVideoIndex === 0}
             onClick={handlePreviousVideo}
+            className="nav-button"
           >
             Previous
           </button>
           <button
             disabled={currentVideoIndex === videos.length - 1}
             onClick={handleNextVideo}
+            className="nav-button"
           >
             Next
           </button>
         </div>
-        <ul>
-          <li key={currentVideo.id_vid}>
-            <strong>ID:</strong> {currentVideo.id_vid}<br/>
-            <strong>Instructor:</strong> {instructor}<br/>
-            <strong>Description:</strong> {lesson_description}<br/>
-            <video controls>
-              <source src={currentVideo.link_vid} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </li>
-        </ul>
+        <div className="video-container">
+          <video controls>
+            <source src={currentVideo.link_vid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="video-details">
+          <strong>Description:</strong> {lesson_description}
+        </div>
+      </div>
+      <div className="sidebar">
+        <Chatbot />
       </div>
     </div>
   );
