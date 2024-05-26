@@ -39,7 +39,7 @@ const CardContainer = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-cards">
       <div className="row">
         {domains.map(domain => (
           <div className="col-md-4 mb-4" key={domain.domain_id}>
@@ -48,10 +48,10 @@ const CardContainer = () => {
                 <h2 className="card-title">{domain.domain_name}</h2>
                 {domain.trainings.map(training => (
                   <div className="mb-3" key={training.training_id}>
-                    <h3>{training.training_name}</h3>
+                    <h3 className="training">{training.training_name}</h3>
                     {training.lessons.map(lesson => (
                       <div key={lesson.lesson_id}>
-                        <h4>
+                        <h4 className="lesson">
                         <Link to={`/lessons/${lesson.lesson_id}`} className="btn btn-blue btn-block">
                           {lesson.lesson_description}
                         </Link>

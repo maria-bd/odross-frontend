@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Import axios for making API requests
-import './ChatComponent.css'
+import axios from 'axios';
+import './ChatComponent.css';
 
 const ChatbotComponent = () => {
-  const [message, setMessage] = useState(''); // State for user's message
-  const [conversation, setConversation] = useState([]); // State for chatbot conversation
+  const [message, setMessage] = useState('');
+  const [conversation, setConversation] = useState([]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
-    if (!message) return; // Check if user entered a message
+    if (!message) return;
 
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/generate/', {
@@ -18,13 +18,13 @@ const ChatbotComponent = () => {
 
       setConversation((prevConversation) => [
         ...prevConversation,
-        { role: 'user', text: message }, // Add user's message
-        { role: 'bot', text: response.data.response } // Add chatbot's response
+        { role: 'user', text: message },
+        { role: 'bot', text: response.data.response }
       ]);
 
-      setMessage(''); // Clear the message input
+      setMessage('');
     } catch (error) {
-      console.error(error); // Handle any errors during API call
+      console.error(error);
     }
   };
 
@@ -46,7 +46,8 @@ const ChatbotComponent = () => {
 
   return (
     <div className="chatbot-container">
-      <h1>Chatbot</h1>
+      <br />
+      <h1>AI Chatbot Assistant</h1>
       <div className="conversation">
         {renderConversation()}
       </div>
@@ -55,7 +56,7 @@ const ChatbotComponent = () => {
           type="text"
           value={message}
           onChange={handleChange}
-          placeholder="Type your message..."
+          placeholder="Do you have any questions?"
         />
         <button type="submit">Send</button>
       </form>

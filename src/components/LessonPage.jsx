@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import API_URLS from './variables';
 import './LessonPage.css';
 import Chatbot from '../components/ChatBot/ChatComponent';
+import Navbar2 from './Navbar2';
 
 const LessonPage = () => {
   const { lessonId } = useParams();
@@ -41,39 +42,46 @@ const LessonPage = () => {
 
   const { instructor, lesson_description, videos } = lesson;
   const currentVideo = videos[currentVideoIndex];
+  const { video_title, video_description } = currentVideo;
 
   return (
-    <div className="lesson-page">
-      <div className="main-content">
-        <h2>{lesson_description}</h2>
-        <div className="button-group">
-          <button
-            disabled={currentVideoIndex === 0}
-            onClick={handlePreviousVideo}
-            className="nav-button"
-          >
-            Previous
-          </button>
-          <button
-            disabled={currentVideoIndex === videos.length - 1}
-            onClick={handleNextVideo}
-            className="nav-button"
-          >
-            Next
-          </button>
+    <div className="page-container">
+      <Navbar2 />
+      <div className="lesson-page">
+        <div className="main-content">
+          <h2>{lesson_description}</h2>
+          <div className="button-group">
+            <button
+              disabled={currentVideoIndex === 0}
+              onClick={handlePreviousVideo}
+              className="nav-button"
+            >
+              Previous
+            </button>
+            <button
+              disabled={currentVideoIndex === videos.length - 1}
+              onClick={handleNextVideo}
+              className="nav-button"
+            >
+              Next
+            </button>
+          </div>
+          <div className="video-container">
+            <div className="video-details">
+              <strong>Title:</strong> {video_title}
+            </div>
+            <video controls>
+              <source src={currentVideo.link_vid} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="video-details">
+              <strong>Description:</strong><br /> {video_description}
+            </div>
+          </div>
         </div>
-        <div className="video-container">
-          <video controls>
-            <source src={currentVideo.link_vid} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="sidebar">
+          <Chatbot />
         </div>
-        <div className="video-details">
-          <strong>Description:</strong> {lesson_description}
-        </div>
-      </div>
-      <div className="sidebar">
-        <Chatbot />
       </div>
     </div>
   );
