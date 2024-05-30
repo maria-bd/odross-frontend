@@ -22,7 +22,7 @@ const QuizList = () => {
   return (
     <div className="quiz-list">
       {quizzes.map(quiz => (
-        <QuizCard key={quiz.quiz_id} quiz={quiz} />
+        <QuizCard key={quiz.quiz_id} quiz={quiz} className="quiz-card" />
       ))}
     </div>
   );
