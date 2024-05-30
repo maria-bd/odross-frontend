@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import API_URLS from '../variables'; // Import API_URLS
 import QuizCard from './QuizCard';
+import Navbar1 from '../Navbar1';
 
 const QuizList = () => {
   const [quizzes, setQuizzes] = useState([]);
@@ -20,10 +21,16 @@ const QuizList = () => {
   }, []);
 
   return (
+    <div>
+    <Navbar1 />
+    <br/>
+    <center>
     <div className="quiz-list">
       {quizzes.map(quiz => (
-        <QuizCard key={quiz.quiz_id} quiz={quiz} className="quiz-card" />
+        <QuizCard key={quiz.quiz_id} quiz={quiz} />
       ))}
+    </div>
+    </center>
     </div>
   );
 };

@@ -1,25 +1,61 @@
-/* src/components/QuestionCard.css */
-.question-card {
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .question-card h3 {
-    margin-bottom: 10px;
-    color: blue;
-  }
-  
-  .question-card ul {
-    list-style-type: none;
-    padding-left: 0;
-    color: blue;
-  }
-  
-  .question-card li {
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 3px;
-    color: blue;
+/* QuizCard.css */
 
-  }
-  
+.quiz-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Center the grid */
+  background-color: #f0f0f0;
+}
+
+.quiz-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, background-color 0.3s, color 0.3s;
+}
+
+.quiz-card h2 {
+  color: #333;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.quiz-card p {
+  color: #555;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.details-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  background-color: #007bff;
+  color: white;
+}
+
+.quiz-card:hover h2,
+.quiz-card:hover p {
+  color: white;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+  color: white;
+}

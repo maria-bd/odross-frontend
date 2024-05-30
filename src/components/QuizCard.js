@@ -5,12 +5,12 @@ import './QuizCard.css';  // We'll create this CSS file for styling
 const QuizCard = ({ quiz }) => {
   return (
     <div className="quiz-card">
-      <h2>{quiz.title}</h2>
-      <p>Questions: {quiz.question_count}</p>
-      <p>XP Points: {quiz.XP_pts}</p>
-      <Link to={`/quiz/${quiz.quiz_id}`} className="details-button">View Details</Link>
-    </div>
-  );
+    <h2>{quiz.title}</h2>
+    <p>XP Points: {quiz.XP_pts}</p>
+    <Link to={`/quiz/${quiz.quiz_id}`} className="details-button">View Details</Link>
+  </div>
+);
 };
+
 
 export default QuizCard;

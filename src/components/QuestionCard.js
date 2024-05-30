@@ -1,45 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AnswerButton from './AnswerButton';
+import './QuizDetail.css';
+import './AnswerButton.css';
 
-const QuestionCard = ({ question }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [validationMessage, setValidationMessage] = useState('');
-  const [timer, setTimer] = useState(30);
-
-  // Countdown timer effect
-  useEffect(() => {
-    let intervalId;
-    if (timer > 0) {
-      intervalId = setInterval(() => {
-        setTimer(prevTimer => prevTimer - 1);
-      }, 1000);
-    } else {
-      clearInterval(intervalId);
-      setValidationMessage('TIME OUT');
-    }
-
-    // Clean up timer on unmount
-    return () => clearInterval(intervalId);
-  }, [timer]);
-
-  const handleAnswerSelected = (answerId, isCorrect) => {
-    if (timer === 0) {
-      return;
-    }
-    setSelectedAnswer({ id: answerId, isCorrect });
-  };
-
-  const handleConfirmSelection = () => {
-    if (!selectedAnswer) {
-      setValidationMessage('Please select an answer');
-      return;
-    }
-
-    if (selectedAnswer.isCorrect) {
-      setValidationMessage('Correct!');
-    } else {
-      setValidationMessage('Not correct');
-    }
+const QuestionCard = ({ question, selectedAnswer, onAnswerSelected }) => {
+  const handleAnswerSelected = (answerId) => {
+    onAnswerSelected(question.id, answerId);
   };
 
   return (
@@ -50,19 +16,12 @@ const QuestionCard = ({ question }) => {
           <AnswerButton
             key={answer.id}
             answer={answer}
-            isCorrectAnswer={answer.is_right}
+            isSelected={selectedAnswer === answer.id}
             onAnswerSelected={handleAnswerSelected}
-            disabled={timer === 0}
+            disabled={Boolean(selectedAnswer)}
           />
         ))}
       </div>
-      <button onClick={handleConfirmSelection} disabled={timer === 0}>
-        Confirm Selection
-      </button>
-      <span className={`validation-message ${validationMessage ? 'show' : ''}`}>
-        {validationMessage}
-      </span>
-      <div className="timer">Time remaining: {timer} seconds</div>
     </div>
   );
 };

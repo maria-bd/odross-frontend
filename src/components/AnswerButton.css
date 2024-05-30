@@ -1,0 +1,25 @@
+/* AnswerButton.css */
+
+.answer-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .answer-label {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: white;
+    color: #007bff;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .answer-container.hovered .answer-label,
+  .answer-container.selected .answer-label {
+    background-color: #007bff;
+    color: white;
+  }
+  
