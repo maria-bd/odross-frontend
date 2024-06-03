@@ -1,0 +1,59 @@
+.domain-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .domain-table-wrapper {
+    width: 900px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .domain-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .domain-table th, .domain-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .domain-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .domain-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .domain-name-input, .domain-description-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-domain-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-domain-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  
