@@ -1,0 +1,54 @@
+/* styles.css */
+.navbar {
+    background-color: #f8f8f8; /* Cream color */
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensure the navbar spans the full width */
+    right: 0; /* Ensure the navbar spans the full width */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .logo img {
+    padding: 20px;
+    height: 80px; /* Adjust as needed */
+  }
+  .nav-links {
+    display: flex;
+    margin-left: auto; /* Changed margin-right to margin-left */
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px; /* Adjusted padding for better button size */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  }
+  .nav-button Link {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px; /* Adjusted padding for better button size */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  }
+  .nav-button:hover {
+    background-color: #00ffff; /* Blue color on hover */
+    color: #fff; /* Change text to white on hover */
+  }
+  
+  .nav-button.active {
+    background-color: #0000ff; /* Blue color for selected button */
+    color: #fff; /* Text color for selected button */
+  }
+  
+  .nav-button:not(:last-child) {
+    margin-right: 15px;
+  }
+  

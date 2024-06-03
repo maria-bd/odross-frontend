@@ -1,0 +1,26 @@
+/* src/components/Statistics.css */
+.statistics {
+    text-align: center;
+    padding: 2rem;
+}
+.chart-container h1 {
+    color: blue;
+}
+.chart-container {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%;
+    }
+}
