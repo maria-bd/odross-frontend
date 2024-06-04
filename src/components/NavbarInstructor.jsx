@@ -13,7 +13,7 @@ function NavbarInstructor() {
         {/* Replace anchor tags with Link components */}
         <Link to="/AddQuiz" className="nav-button">Quiz</Link>
         <Link to="/Leaderboard" className="nav-button">Video</Link>
-        <Link to="/Courses" className="nav-button">Lesson</Link>
+        <Link to="/LessonTable" className="nav-button">Lesson</Link>
         <Link to="/QuizList" className="nav-button">Profile</Link>
       </div>
     </div>

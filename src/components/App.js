@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Register from './components/Register';
 import Login1 from './components/Login1';
 import Login2 from './components/Login2';
+import Login3 from './components/Login3';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
 import GradientBackground from './components/GradientBackground';
@@ -16,6 +17,7 @@ import QuizList from './components/Quiz/QuizList';
 import QuizDetail from './components/Quiz/QuizDetail';
 
 import AddQuiz from './components/Instructor/AddQuiz';
+import LessonTable from './components/Instructor/LessonTable';
 
 
 import Admin from './components/Admin/AdminTable';
@@ -35,6 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Login1" element={<GradientBackground><Login1 /></GradientBackground>} />
           <Route path="/Login2" element={<GradientBackground><Login2 /></GradientBackground>} />
+          <Route path="/admin/login" element={<GradientBackground><Login3 /></GradientBackground>} />
           <Route path="/Register" element={<GradientBackground><Register /></GradientBackground>} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/EditProfile" element={<GradientBackground><EditProfile /></GradientBackground>} />
@@ -53,10 +56,11 @@ function App() {
           <Route path="/admin/delete-user/:userId" element={<DeleteUser />} />
           <Route path="/Statistics" element={<Statistics />} />
           <Route path="/Update" element={<Update />} />
+          <Route path="/Teachers" element={<Teachers />} />
           {/* Teacher routes */}
           <Route path="/AddQuiz" element={<AddQuiz />} />
           <Route path="/Statistics" element={<Statistics />} />
-          <Route path="/Teachers" element={<Teachers />} />
+          <Route path="/LessonTable" element={<LessonTable />} />
         </Routes>
       </div>
     </Router>
