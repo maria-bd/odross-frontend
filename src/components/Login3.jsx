@@ -33,7 +33,7 @@ const Login3 = () => { // Changed the component name to Login2
                 const data = await response.json();
                 if (response.ok) {
                     console.log('admin login successful');
-                    navigate('/Dashboard'); // Redirect to Dashboard upon successful login
+                    navigate('/admin'); // Redirect to Dashboard upon successful login
                 } else {
                     // Handle server-side errors
                     console.error('admin login failed:', data.detail);

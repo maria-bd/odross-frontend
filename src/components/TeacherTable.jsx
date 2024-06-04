@@ -64,8 +64,7 @@ const AdminTable = () => {
                 <td>{user.password ? '*****' : 'N/A'}</td>
                 <td>{user.bio}</td>
                 <td>
-                  <Link to={`/admin/edit-user/${user.id}`} className="edit-button">Edit</Link>
-                  <button className="delete-button" onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                <button className="delete-button1" onClick={() => handleDeleteUser(user.id)}>Delete</button>
                 </td>
               </tr>
             ))}

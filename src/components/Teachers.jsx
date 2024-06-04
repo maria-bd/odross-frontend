@@ -26,7 +26,7 @@ const Teachers = () => {
         e.preventDefault();
         if (validateForm()) {
             try {
-                const response = await fetch(API_URLS.register, {
+                const response = await fetch(API_URLS.adminInstructor, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Teachers = () => {
                 const data = await response.json();
                 if (response.ok) {
                     console.log('Registration successful');
-                    navigate('/Courses');
+                    navigate('/Teachers');
                 } else {
                     // Handle server-side errors
                     console.error('Registration failed:', data.email[0]);

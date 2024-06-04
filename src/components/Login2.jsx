@@ -33,7 +33,7 @@ const Login2 = () => { // Changed the component name to Login2
                 const data = await response.json();
                 if (response.ok) {
                     console.log('Teacher login successful');
-                    navigate('/Dashboard'); // Redirect to Dashboard upon successful login
+                    navigate('/addQuiz'); // Redirect to Dashboard upon successful login
                 } else {
                     // Handle server-side errors
                     console.error('Teacher login failed:', data.detail);

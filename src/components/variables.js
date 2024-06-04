@@ -2,6 +2,8 @@ const API_BASE_URL = 'http://127.0.0.1:8000/api/';
 
 const API_URLS = {
   adminInstructor: `${API_BASE_URL}admin/instructor/`,
+  adminInstructorList: `${API_BASE_URL}admin/instructorList/`,
+  adminInstructorEditDelete: (pk) => `${API_BASE_URL}admin/instructorList/${pk}/`,
   adminLearner: `${API_BASE_URL}admin/learner/`,
   adminLearnerEditDelete: (pk) => `${API_BASE_URL}admin/learner/${pk}/`,
   adminLearnerOne: (pk) => `${API_BASE_URL}admin/learner/1/${pk}/`,
@@ -23,6 +25,7 @@ const API_URLS = {
   instructors: `${API_BASE_URL}instructors/`,
   learners: `${API_BASE_URL}learners/`,
   training: `${API_BASE_URL}training/`,
+  trainingDetail: (pk) => `${API_BASE_URL}training/${pk}/`, // Define trainingDetail as a function
   lesson: `${API_BASE_URL}lesson/`,
   lessons: `${API_BASE_URL}lessons/`,
   enrollments: `${API_BASE_URL}enrollments/`,
